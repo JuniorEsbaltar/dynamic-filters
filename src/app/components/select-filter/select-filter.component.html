@@ -1,0 +1,7 @@
+<div class="form" [formGroup]="form">
+  <label [attr.for]="filter.key">{{filter.label}}:</label>
+
+  <select [id]="filter.key" [formControlName]="filter.key">
+    <option *ngFor="let opt of filter.options" [value]="opt.key">{{opt.value}}</option>
+  </select>
+</div>
