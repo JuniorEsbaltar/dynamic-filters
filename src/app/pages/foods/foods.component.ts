@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
-import { FilterForm } from "src/app/helpers/filter-form";
+import { NumberFormatDirective } from "src/app/directives/number-format.directive";
+import { FilterForm, setComma } from "src/app/helpers/filter-form";
 import { FilterDataService } from "src/app/services/filter-data.service";
 
 @Component({
@@ -8,25 +9,10 @@ import { FilterDataService } from "src/app/services/filter-data.service";
   styleUrls: ["./foods.component.scss"],
 })
 export class FoodsComponent implements OnInit {
-  filters: FilterForm<string>[] = [
-    {
-      value: "",
-      key: "color",
-      label: "Color",
-      options: [
-        { key: "", value: "All" },
-        { key: "yellow", value: "Yellow" },
-        { key: "green", value: "Green" },
-      ],
-      component: 'select',
-    },
-  ];
+  filters!: FilterForm<string>[]
   constructor(private filterDataService: FilterDataService) {}
 
   ngOnInit(): void {
-    setTimeout(() => {
-      this.filterDataService.getGroupChanges().subscribe(console.log);
-
-    },2000)
+    this.filters = this.filterDataService.getFoodFilterData();
   }
 }

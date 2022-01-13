@@ -1,19 +1,36 @@
-import { Injectable } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { Injectable } from "@angular/core";
+import { FormGroup } from "@angular/forms";
+import { NumberFormatDirective } from "../directives/number-format.directive";
+import { FilterForm, setComma } from "../helpers/filter-form";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root",
 })
 export class FilterDataService {
-  group!: FormGroup;
+  filters: FilterForm<string>[] = [
+    // {
+    //   value: "",
+    //   key: "color",
+    //   label: "Color",
+    //   options: [
+    //     { key: "", value: "All" },
+    //     { key: "yellow", value: "Yellow" },
+    //     { key: "green", value: "Green" },
+    //   ],
+    //   component: "select",
+    // },
+    {
+      value: "",
+      key: "date",
+      label: "Date",
+      options: [],
+      component: "text",
+      applyMask: (e: any) => setComma(e),
+    },
+  ];
 
-  constructor() { }
-
-  changeFormGroup(group: any) {
-    this.group = new FormGroup(group);
-  }
-
-  getGroupChanges() {
-    return this.group.valueChanges
+  constructor() {}
+  getFoodFilterData() {
+    return this.filters;
   }
 }

@@ -1,14 +1,13 @@
 import { Injectable } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { FilterForm } from '../helpers/filter-form';
-import { FilterDataService } from './filter-data.service';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class FilterControlService {
-
-  constructor(private filterDataService: FilterDataService) { }
+  constructor() { }
 
   buildFormGroup(filters: FilterForm<string>[]) {
     const group: any = {};
@@ -17,6 +16,6 @@ export class FilterControlService {
       group[filter.key] = new FormControl("");
     });
 
-    this.filterDataService.group = new FormGroup(group);
+    return new FormGroup(group);
   }
 }

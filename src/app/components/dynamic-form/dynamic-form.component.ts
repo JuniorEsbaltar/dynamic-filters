@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from "@angular/core";
+import { FormControl, FormGroup } from "@angular/forms";
 import { FilterForm } from "src/app/helpers/filter-form";
 import { FilterControlService } from "src/app/services/filter-control.service";
 import { FilterDataService } from "src/app/services/filter-data.service";
@@ -9,18 +10,14 @@ import { FilterDataService } from "src/app/services/filter-data.service";
   styleUrls: ["./dynamic-form.component.scss"],
 })
 export class DynamicFormComponent implements OnInit {
-  @Input() filters: FilterForm<string>[] = [];
-
+  @Input() filters!: FilterForm<string>[];
+  group!: FormGroup;
   constructor(
     private filterControlService: FilterControlService,
-    private filterDataService: FilterDataService
   ) {}
 
   ngOnInit(): void {
-    this.filterControlService.buildFormGroup(this.filters);
-  }
-
-  getForm() {
-    return this.filterDataService.group;
+    this.group = this.filterControlService.buildFormGroup(this.filters);
+    this.group.valueChanges.subscribe(console.log);
   }
 }
