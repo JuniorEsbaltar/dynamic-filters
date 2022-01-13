@@ -18,7 +18,7 @@ export class FoodsComponent implements OnInit {
         { key: "yellow", value: "Yellow" },
         { key: "green", value: "Green" },
       ],
-      component: '',
+      component: 'select',
     },
   ];
   constructor(private filterDataService: FilterDataService) {}

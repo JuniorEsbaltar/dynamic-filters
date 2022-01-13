@@ -1,0 +1,5 @@
+<div class="text-form" [formGroup]="form">
+  <label [attr.for]="filter.key">{{filter.label}}:</label>
+
+  <input [formControlName]="filter.key" [id]="filter.key" [type]="'textbox'">
+</div>

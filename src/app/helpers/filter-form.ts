@@ -3,7 +3,7 @@ export class FilterForm<T> {
   key: string;
   label: string;
   options: { key: string; value: string }[];
-  component: string;
+  component: 'select'|'text';
 
   constructor(
     options: {
@@ -11,13 +11,15 @@ export class FilterForm<T> {
       key?: string;
       label?: string;
       options?: { key: string; value: string }[];
-      component?: string;
-    } = {}
+      component?: 'select'|'text';
+    } = {
+      component: 'select'
+    }
   ) {
     this.value = options.value;
     this.key = options.key || "";
     this.label = options.label || "";
     this.options = options.options || [];
-    this.component = options.component || "";
+    this.component = options.component || "select";
   }
 }
