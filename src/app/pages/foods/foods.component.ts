@@ -1,6 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { NumberFormatDirective } from "src/app/directives/number-format.directive";
-import { FilterForm, setComma } from "src/app/helpers/filter-form";
+import { FilterForm } from "src/app/helpers/filter-form";
 import { FilterDataService } from "src/app/services/filter-data.service";
 
 @Component({

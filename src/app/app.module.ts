@@ -10,8 +10,7 @@ import { ContainerRefDirective } from './directives/container-ref.directive';
 import { SelectFilterComponent } from './components/select-filter/select-filter.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TextFilterComponent } from './components/text-filter/text-filter.component';
-import { NumberFormatDirective } from './directives/number-format.directive';
-import { DynamicAttributeDirective } from './directives/dynamic-attribute.directive';
+import { MaskDirective } from './directives/mask.directive';
 
 @NgModule({
   declarations: [
@@ -22,8 +21,7 @@ import { DynamicAttributeDirective } from './directives/dynamic-attribute.direct
     ContainerRefDirective,
     SelectFilterComponent,
     TextFilterComponent,
-    NumberFormatDirective,
-    DynamicAttributeDirective,
+    MaskDirective,
   ],
   imports: [
     BrowserModule,

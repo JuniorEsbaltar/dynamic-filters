@@ -1,6 +1,4 @@
 import { Injectable } from "@angular/core";
-import { FormGroup } from "@angular/forms";
-import { NumberFormatDirective } from "../directives/number-format.directive";
 import { FilterForm, setComma } from "../helpers/filter-form";
 
 @Injectable({

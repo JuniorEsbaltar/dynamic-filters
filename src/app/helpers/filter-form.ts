@@ -1,10 +1,3 @@
-import { Directive, Type } from "@angular/core";
-import { IMaskDirective } from "./mask-directive.interface";
-
-interface IDirective {
-  name: string,
-  klass: Type<IMaskDirective> 
-}
 export const setComma = (input: HTMLInputElement) =>  {
   const { value } = input;
   input.value = value.replace('.',',');
