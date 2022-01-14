@@ -15,7 +15,7 @@ export class FilterForm<T> {
   label: string;
   options: { key: string; value: string }[];
   component: 'select'|'text';
-  applyMask?(e: any): void;  
+  applyMask?(e: any): void;
 
   constructor(
     options: {

@@ -5,9 +5,9 @@ import { IMaskDirective } from '../helpers/mask-directive.interface';
   selector: '[maskDirective]'
 })
 export class NumberFormatDirective extends IMaskDirective {
-  @Input() maskDirective!: (e:any) => void;
+  @Input() maskDirective!: (e: any) => void;
   constructor() { 
-    super();//ref: ElementRef
+    super();
   }
   
   @HostListener('input', ['$event.target'])

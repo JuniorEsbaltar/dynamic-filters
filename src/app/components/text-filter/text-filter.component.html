@@ -1,5 +1,17 @@
-<div #test class="text-form" [formGroup]="form">
-  <label [attr.for]="filter.key">{{filter.label}}:</label>
+<div class="text-form" [formGroup]="form">
+  <label [attr.for]="filter.key">{{ filter.label }}:</label>
 
-  <input [maskDirective]="filter.applyMask" [formControlName]="filter.key" [id]="filter.key" [type]="'textbox'">
+  <input
+    *ngIf="filter.applyMask"
+    [maskDirective]="filter.applyMask"
+    [formControlName]="filter.key"
+    [id]="filter.key"
+    [type]="'textbox'"
+  />
+  <input
+    *ngIf="!filter.applyMask"
+    [formControlName]="filter.key"
+    [id]="filter.key"
+    [type]="'textbox'"
+  />
 </div>
